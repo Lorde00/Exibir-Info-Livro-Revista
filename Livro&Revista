@@ -1,0 +1,41 @@
+class Material:
+    def __init__(self, titulo, representante) -> None:
+        self.titulo = titulo
+        self.representante = representante
+
+
+    def exibir(self):
+        print(f'Título: {self.titulo}')        
+        print(f'Representante: {self.representante}')
+
+    
+class Livro(Material):
+    def __init__(self, titulo, representante, genero):
+        super().__init__(titulo, representante)
+        self.genero = genero
+
+    def exibir(self):
+        super().exibir()
+        return (f'Gênero: {self.genero}')
+
+
+class Revista(Material):
+    def __init__(self, titulo, representante, edicao):
+        super().__init__(titulo, representante)
+        self.edicao = edicao
+    
+    def exibir(self):
+        super().exibir()
+        return (f'Edição: {self.edicao}')
+
+    
+
+livro = Livro('Berserk', 'Kentaro Miura', 'Fantasia')
+
+revista = Revista('Veja', 'Veja', 'Janeiro 2023')
+
+print('Informações livro:')
+print(livro.exibir())
+
+print('\nInformações Revista:')
+print(revista.exibir())
